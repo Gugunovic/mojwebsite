@@ -81,6 +81,12 @@
             border-bottom: 1px solid rgba(163, 126, 44, 0.4);
         }
         
+        .mobile-menu-panel {
+            background: linear-gradient(135deg, rgba(0, 96, 57, 0.98) 0%, rgba(0, 61, 36, 0.98) 100%);
+            border-top: 1px solid rgba(163, 126, 44, 0.35);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+        }
+        
         .call-button-fixed {
             position: fixed;
             bottom: 20px;
@@ -125,32 +131,32 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden luxury-card absolute top-full left-0 right-0">
+        <div id="mobileMenu" class="hidden md:hidden mobile-menu-panel absolute top-full left-0 right-0 gold-border">
             <div class="px-6 py-6 space-y-4">
-                <a href="#home" class="block text-lg font-medium hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Početna</a>
-                <a href="#services" class="block text-lg font-medium hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Usluge</a>
-                <a href="#portfolio" class="block text-lg font-medium hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Portfolio</a>
-                <a href="#pricing" class="block text-lg font-medium hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Cene</a>
-                <a href="#contact" class="block text-lg font-medium hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Kontakt</a>
+                <a href="#home" class="block text-lg font-medium text-white hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Početna</a>
+                <a href="#services" class="block text-lg font-medium text-white hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Usluge</a>
+                <a href="#portfolio" class="block text-lg font-medium text-white hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Portfolio</a>
+                <a href="#pricing" class="block text-lg font-medium text-white hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Cene</a>
+                <a href="#contact" class="block text-lg font-medium text-white hover:text-yellow-400 transition-colors py-2" onclick="toggleMobileMenu()">Kontakt</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center relative">
+    <section id="home" class="min-h-screen flex items-center relative pt-24 sm:pt-28 pb-16 sm:pb-20">
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-5xl mx-auto text-center">
-                <h1 class="text-6xl md:text-8xl font-bold mb-8 floating">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 sm:mb-8 floating leading-tight">
                     Pretvaramo vaše poslovanje<br>
                     <span class="gold-text">u digitalno iskustvo</span>
                 </h1>
-                <blockquote class="text-3xl md:text-4xl mb-12 italic font-serif text-white max-w-4xl mx-auto leading-relaxed">
+                <blockquote class="text-xl sm:text-2xl md:text-4xl mb-8 sm:mb-12 italic font-serif text-white max-w-4xl mx-auto leading-relaxed">
                     "Kvalitet nikada nije slučajan; on je uvek rezultat iskrenog truda."
                 </blockquote>
-                <p class="text-xl md:text-2xl mb-10 text-gray-300">
+                <p class="text-base sm:text-xl md:text-2xl mb-8 sm:mb-10 text-gray-200">
                     Specijalizovani za izradu premium sajtova za auto kuće i zdravstvene ordinacije
                 </p>
-                <button onclick="scrollToSection('contact')" class="gold-bg hover:bg-yellow-600 text-white font-bold py-4 px-10 rounded-full text-xl transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <button onclick="scrollToSection('contact')" class="gold-bg hover:bg-yellow-600 text-white font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-full text-lg sm:text-xl transition-all duration-300 transform hover:scale-105 shadow-xl">
                     Zakažite Besplatne Konsultacije
                 </button>
             </div>
