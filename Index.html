@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #006039;
+            background: radial-gradient(circle at center, #006039 0%, #004d2e 50%, #003d24 100%);
             background-attachment: fixed;
         }
         
@@ -18,10 +18,10 @@
         }
         
         .luxury-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(163, 126, 44, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 96, 57, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid #a37e2c;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
         
         .gold-border {
@@ -31,6 +31,10 @@
         
         .gold-text {
             color: #a37e2c;
+        }
+        
+        .icon-glow {
+            filter: drop-shadow(0 0 3px rgba(163, 126, 44, 0.6));
         }
         
         .gold-bg {
@@ -159,7 +163,7 @@
                 <!-- Web Design Card -->
                 <div class="luxury-card gold-border rounded-2xl p-10 hover:transform hover:scale-105 transition-all duration-300">
                     <div class="gold-text mb-8">
-                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-20 h-20 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
                     </div>
@@ -178,7 +182,7 @@
                 <!-- Booking Systems Card -->
                 <div class="luxury-card gold-border rounded-2xl p-10 hover:transform hover:scale-105 transition-all duration-300">
                     <div class="gold-text mb-8">
-                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-20 h-20 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                     </div>
@@ -197,7 +201,7 @@
                 <!-- Finance Calculators Card -->
                 <div class="luxury-card gold-border rounded-2xl p-10 hover:transform hover:scale-105 transition-all duration-300">
                     <div class="gold-text mb-8">
-                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-20 h-20 icon-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
@@ -294,7 +298,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-20 bg-gradient-to-b from-gray-900 to-purple-900">
+    <section id="pricing" class="py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl md:text-6xl font-bold text-center mb-20 gold-text">Cenovnik</h2>
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
