@@ -3,25 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Kuća Elit | Digitalac Portfolio</title>
+    <title>Auto Kuća Elit | Digitalni Portfelj</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0a0a0a; color: white; font-family: sans-serif; }
+        body { background: #0a0a0a; color: white; font-family: 'Inter', sans-serif; }
         .gold-border { border: 1px solid #a37e2c; }
+        .gold-bg { background: linear-gradient(135deg, #a37e2c 0%, #d4af37 100%); }
     </style>
 </head>
-<body class="p-10">
-    <nav class="mb-10">
-        <a href="index.html" class="text-yellow-500 font-bold">← Nazaj na Digitalac</a>
+<body class="bg-black text-white">
+
+    <nav class="p-6 max-w-6xl mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold">Auto Kuća <span class="text-yellow-500">Elit</span></div>
+        <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">← Nazaj na Digitalac</a>
     </nav>
-    
-    <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl font-bold mb-6">Auto Kuća Elit</h1>
-        <p class="text-xl text-gray-400 mb-10">Primer moderne spletne trgovine za avtomobile.</p>
+
+    <section class="py-20 text-center px-6">
+        <h1 class="text-5xl font-extrabold mb-4">Prodaja vozil na višjem nivoju</h1>
+        <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">Primer spletne strani, ki smo jo izdelali za avto hišo, s poudarkom na uporabniški izkušnji in hitrih izračunih.</p>
         
-        <div class="luxury-card gold-border p-20 rounded-2xl bg-white/5">
-            <p class="text-2xl italic">"Tukaj bo v prihodnje vstavljen tvoj Leasing Kalkulator!"</p>
+        <div class="max-w-4xl mx-auto gold-border rounded-3xl p-8 bg-white/5 backdrop-blur-xl">
+            <h2 class="text-2xl font-bold mb-8 text-yellow-500 text-left">Informativni Leasing Izračun</h2>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-6 text-left">
+                    <div>
+                        <label class="block text-sm mb-2">Cena vozila (€)</label>
+                        <input type="number" id="cena" value="45000" class="w-full p-3 rounded bg-white/10 border border-white/20">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Polog (%)</label>
+                        <input type="number" id="polog" value="20" class="w-full p-3 rounded bg-white/10 border border-white/20">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Doba odplate (meseci)</label>
+                        <select id="meseci" class="w-full p-3 rounded bg-white/10 border border-white/20">
+                            <option value="48">48 mesecev</option>
+                            <option value="60">60 mesecev</option>
+                            <option value="72">72 mesecev</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center items-center bg-yellow-500/10 rounded-2xl p-6">
+                    <span class="text-gray-400 text-sm mb-2">Mesečni obrok</span>
+                    <span id="rezultat" class="text-5xl font-bold text-yellow-500">0.00 €</span>
+                    <button onclick="racunaj()" class="mt-6 w-full gold-bg text-black font-bold py-3 rounded-lg hover:scale-105 transition-transform">Izračunaj</button>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <script>
+        function racunaj() {
+            let cena = document.getElementById('cena').value;
+            let polog = document.getElementById('polog').value;
+            let n = document.getElementById('meseci').value;
+            let i = 0.065; // 6.5% kamata
+
+            let glavnica = cena - (cena * (polog / 100));
+            let rata = (glavnica * (1 + (i * (n / 12)))) / n;
+            
+            document.getElementById('rezultat').innerText = rata.toFixed(2) + " €";
+        }
+        window.onload = racunaj;
+    </script>
 </body>
 </html>
