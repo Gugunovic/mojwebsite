@@ -3,80 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental Center Maribor | Digitalac</title>
+    <title>Dental Center Maribor | Digitalac Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #050505; color: white; font-family: sans-serif; -webkit-font-smoothing: antialiased; }
-        .glass-solid { background: #013220; border: 1px solid rgba(212, 175, 55, 0.3); }
-        .gold-text { color: #d4af37; }
-        .service-card { border: 1px solid rgba(255,255,255,0.05); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-        .service-card.active { border-color: #d4af37; background: rgba(212, 175, 55, 0.15); transform: scale(0.98); }
-        .gold-bg { background: #d4af37; }
+        body { 
+            background: #04070a; /* Ultra tamna navy pozadina */
+            color: #f0f4f8; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+        }
+        .medical-card { 
+            background: #0a1118;
+            border: 1px solid rgba(56, 189, 248, 0.1); /* Suptilna ledeno plava ivica */
+            transition: all 0.3s ease;
+        }
+        .service-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .service-item.active {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.05);
+        }
+        .ice-text { color: #38bdf8; }
+        .ice-bg { background: #38bdf8; color: #04070a; }
         * { -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
 <body class="min-h-screen">
 
-    <nav class="p-6 max-w-6xl mx-auto flex justify-between items-center border-b border-white/5 mb-12">
-        <a href="index.html" class="text-xl font-bold uppercase tracking-widest">DENTAL <span class="gold-text">CENTER</span></a>
-        <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-500 hover:text-white transition-all">← Nazaj</a>
+    <nav class="p-6 max-w-6xl mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-lg font-bold tracking-widest uppercase">DENTAL<span class="ice-text font-light">CENTER</span></a>
+        <a href="index.html" class="text-[10px] uppercase tracking-[0.2em] text-slate-500">← Nazaj</a>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-4 pb-20">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-tight italic text-white">Vrhunski nasmeh <span class="gold-text">brez bolečin.</span></h1>
-            <p class="text-gray-400 text-sm md:text-base italic leading-relaxed">V srcu Maribora združujemo vrhunsko strokovnost in najsodobnejšo dentalno tehnologijo za vaše popolno udobje.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-12">
-            <div class="lg:col-span-2 space-y-4">
-                <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-6 font-bold">Izberite želene storitve</p>
+    <main class="max-w-6xl mx-auto px-6 py-10 md:py-20">
+        <div class="grid lg:grid-cols-5 gap-12 items-start">
+            
+            <div class="lg:col-span-3 space-y-8">
+                <div class="space-y-4">
+                    <h4 class="ice-text text-xs font-bold uppercase tracking-[0.3em]">Vrhunska stomatologija</h4>
+                    <h1 class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+                        Vaš nasmeh si zasluži <br>
+                        <span class="text-slate-400 font-light">najboljšo oskrbo.</span>
+                    </h1>
+                </div>
                 
-                <div onclick="toggle(this, 50)" class="service-card glass-solid p-5 rounded-2xl cursor-pointer flex justify-between items-center group">
-                    <div>
-                        <h4 class="font-bold text-base md:text-lg">Specialistični pregled</h4>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider">Vključuje rentgensko slikanje</p>
-                    </div>
-                    <span class="gold-text font-bold text-lg">50 €</span>
-                </div>
+                <p class="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl font-light">
+                    V Dental Centru Maribor združujemo napredno tehnologijo in nežen pristop. Naš cilj je zagotoviti dolgotrajne rezultate v okolju, kjer se počutite sproščeno.
+                </p>
 
-                <div onclick="toggle(this, 850)" class="service-card glass-solid p-5 rounded-2xl cursor-pointer flex justify-between items-center group">
-                    <div>
-                        <h4 class="font-bold text-base md:text-lg">Zobni vsadek (Implantat)</h4>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider">Premium titan materiali</p>
+                <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/5">
+                    <div class="space-y-2">
+                        <span class="text-2xl">🔬</span>
+                        <h5 class="text-sm font-bold uppercase tracking-wider">Tehnologija</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">Uporabljamo najsodobnejšo 3D diagnostiko za natančno načrtovanje.</p>
                     </div>
-                    <span class="gold-text font-bold text-lg">850 €</span>
-                </div>
-
-                <div onclick="toggle(this, 300)" class="service-card glass-solid p-5 rounded-2xl cursor-pointer flex justify-between items-center group">
-                    <div>
-                        <h4 class="font-bold text-base md:text-lg">Lasersko beljenje</h4>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider">Brez poškodb sklenine</p>
+                    <div class="space-y-2">
+                        <span class="text-2xl">💎</span>
+                        <h5 class="text-sm font-bold uppercase tracking-wider">Kakovost</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">Uporabljamo le vrhunske materiale priznanih svetovnih proizvajalcev.</p>
                     </div>
-                    <span class="gold-text font-bold text-lg">300 €</span>
-                </div>
-
-                <div onclick="toggle(this, 120)" class="service-card glass-solid p-5 rounded-2xl cursor-pointer flex justify-between items-center group">
-                    <div>
-                        <h4 class="font-bold text-base md:text-lg">Higiensko čiščenje</h4>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-wider">Ultrazvočna odstranitev kamna</p>
-                    </div>
-                    <span class="gold-text font-bold text-lg">120 €</span>
                 </div>
             </div>
 
-            <div class="bg-black/40 rounded-3xl p-8 border border-white/10 h-fit lg:sticky lg:top-10 shadow-xl">
-                <p class="text-[10px] uppercase text-gray-500 tracking-[0.2em] mb-2 text-center">Informativni strošek</p>
-                <div class="text-6xl font-bold gold-text mb-8 text-center tracking-tighter" id="total">0 €</div>
+            <div class="lg:col-span-2 medical-card rounded-[2.5rem] p-8 md:p-10 shadow-2xl">
+                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-8 text-center font-semibold">Informativni načrt stroškov</p>
                 
-                <div class="space-y-4 text-xs text-gray-400 mb-10 border-t border-white/5 pt-8">
-                    <p class="flex items-center">✓ Individualni načrt zdravljenja</p>
-                    <p class="flex items-center">✓ Možnost plačila na 24 obrokov</p>
-                    <p class="flex items-center">✓ Digitalna diagnostika</p>
+                <div class="space-y-4 mb-10">
+                    <div onclick="toggle(this, 50)" class="service-item p-5 rounded-2xl cursor-pointer flex justify-between items-center group transition-all">
+                        <div class="pr-4">
+                            <h4 class="text-sm font-semibold group-hover:ice-text transition-colors">Specialistični pregled</h4>
+                            <p class="text-[9px] text-slate-500 uppercase mt-1">Vključuje RTG slikanje</p>
+                        </div>
+                        <span class="font-bold text-sm">50 €</span>
+                    </div>
+
+                    <div onclick="toggle(this, 850)" class="service-item p-5 rounded-2xl cursor-pointer flex justify-between items-center group transition-all">
+                        <div class="pr-4">
+                            <h4 class="text-sm font-semibold group-hover:ice-text transition-colors">Implantat (Premium)</h4>
+                            <p class="text-[9px] text-slate-500 uppercase mt-1">Doživljenjska garancija</p>
+                        </div>
+                        <span class="font-bold text-sm">850 €</span>
+                    </div>
+
+                    <div onclick="toggle(this, 300)" class="service-item p-5 rounded-2xl cursor-pointer flex justify-between items-center group transition-all">
+                        <div class="pr-4">
+                            <h4 class="text-sm font-semibold group-hover:ice-text transition-colors">Lasersko beljenje</h4>
+                            <p class="text-[9px] text-slate-500 uppercase mt-1">Ena obravnava (45 min)</p>
+                        </div>
+                        <span class="font-bold text-sm">300 €</span>
+                    </div>
+
+                    <div onclick="toggle(this, 120)" class="service-item p-5 rounded-2xl cursor-pointer flex justify-between items-center group transition-all">
+                        <div class="pr-4">
+                            <h4 class="text-sm font-semibold group-hover:ice-text transition-colors">Higiensko čiščenje</h4>
+                            <p class="text-[9px] text-slate-500 uppercase mt-1">Ultrazvočno odstranjevanje</p>
+                        </div>
+                        <span class="font-bold text-sm">120 €</span>
+                    </div>
                 </div>
 
-                <a href="index.html#contact" class="block w-full py-4 gold-bg text-black font-extrabold rounded-xl uppercase text-xs tracking-widest text-center hover:scale-[1.03] transition-transform">Rezerviraj termin</a>
+                <div class="border-t border-white/5 pt-8 text-center">
+                    <p class="text-slate-500 text-[9px] uppercase tracking-[0.2em] mb-2">Skupni predvideni znesek</p>
+                    <div class="text-5xl font-bold ice-text tracking-tighter mb-8" id="total">0 €</div>
+                    <a href="index.html#contact" class="block w-full py-4 ice-bg font-extrabold rounded-xl uppercase text-[10px] tracking-[0.2em] hover:brightness-110 transition-all shadow-[0_10px_20px_rgba(56,189,248,0.2)]">Rezerviraj termin</a>
+                </div>
             </div>
+
         </div>
     </main>
 

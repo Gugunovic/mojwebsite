@@ -3,69 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Kuća Elit | Digitalac</title>
+    <title>Auto Kuća Elit | Premium Vozila</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #050505; color: white; font-family: sans-serif; -webkit-font-smoothing: antialiased; }
-        .glass-solid { background: #013220; border: 1px solid rgba(212, 175, 55, 0.3); }
-        .gold-text { color: #d4af37; }
-        .gold-bg { background: #d4af37; }
-        input[type=range] { accent-color: #d4af37; cursor: pointer; touch-action: none; }
+        body { 
+            background: #0a0a0a; /* Duboka Carbon pozadina */
+            color: #e5e4e2; /* Platinasta boja teksta */
+            font-family: 'Inter', sans-serif; 
+            -webkit-font-smoothing: antialiased; 
+        }
+        /* NOVA KARTICA: Metalik gradijent umesto zelenog stakla */
+        .luxury-card-platinum { 
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            border: 1px solid rgba(229, 228, 226, 0.1); /* Suptilna srebrna ivica */
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+        }
+        /* NOVA AKCENTNA BOJA: Platinasta/Titanijum */
+        .platinum-text { 
+            color: #E5E4E2;
+            text-shadow: 0 0 15px rgba(229, 228, 226, 0.2); /* Blagi metalni sjaj */
+        }
+        .platinum-bg { 
+            background: #E5E4E2; 
+            color: #0a0a0a;
+        }
+        /* Novi izgled slajdera - srebrni */
+        input[type=range] { 
+            accent-color: #E5E4E2; 
+            cursor: pointer; 
+            touch-action: none; 
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            background: #333; /* Tamnija traka slajdera */
+            height: 4px;
+        }
     </style>
 </head>
 <body class="min-h-screen">
 
     <nav class="p-6 max-w-6xl mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-xl font-bold uppercase tracking-tighter">ELIT <span class="gold-text">MOTORS</span></a>
-        <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-500 hover:text-white transition-all">← Nazaj na Digitalac</a>
+        <a href="index.html" class="text-xl font-bold uppercase tracking-widest platinum-text">ELIT MOTORS</a>
+        <a href="index.html" class="text-[11px] uppercase tracking-[0.2em] text-gray-500 hover:text-white transition-all">← Nazaj</a>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
-            <div>
-                <h1 class="text-5xl font-bold mb-6 leading-tight uppercase">Vaše vozilo <span class="gold-text">brez kompromisov.</span></h1>
-                <p class="text-gray-400 text-lg mb-8 italic">V Auto Hiši Elit zagotavljamo popolno transparentnost. Vsako vozilo v naši ponudbi je strokovno pregledano in pripravljeno na nove kilometre.</p>
+    <main class="max-w-6xl mx-auto px-6 py-8 md:py-16">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
+            
+            <div class="space-y-8">
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight uppercase tracking-wider">
+                    Vaše vozilo <br>
+                    <span class="platinum-text">brez kompromisov.</span>
+                </h1>
                 
-                <div class="grid grid-cols-2 gap-6 border-l border-[#d4af37]/30 pl-6">
+                <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg font-light">
+                    V Auto Hiši Elit zagotavljamo popolno transparentnost. Vsako vozilo v naši ponudbi je strokovno pregledano in pripravljeno na nove kilometre preverjene kakovosti.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-8 pt-4 border-t border-white/10">
                     <div>
-                        <h4 class="gold-text font-bold uppercase text-xs mb-2 tracking-widest">Garancija</h4>
-                        <p class="text-sm text-gray-500">12 mesecev brezskrbne vožnje.</p>
+                        <h4 class="platinum-text font-bold uppercase text-xs mb-3 tracking-[0.2em]">Garancija</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">12 mesecev vključene brezskrbne vožnje.</p>
                     </div>
                     <div>
-                        <h4 class="gold-text font-bold uppercase text-xs mb-2 tracking-widest">Financiranje</h4>
-                        <p class="text-sm text-gray-500">Hitra odobritev v 24 urah.</p>
+                        <h4 class="platinum-text font-bold uppercase text-xs mb-3 tracking-[0.2em]">Financiranje</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Hitra in diskretna odobritev v 24 urah.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="glass-solid rounded-3xl p-8 shadow-2xl">
-                <h2 class="text-2xl font-bold mb-10 text-center uppercase tracking-widest gold-text">Informativni izračun</h2>
-                <div class="space-y-10">
-                    <div>
-                        <div class="flex justify-between mb-3">
-                            <label class="text-xs uppercase tracking-tighter text-gray-300">Cena vozila</label>
-                            <span class="font-bold text-lg"><span id="val-cena">45.000</span> €</span>
+            <div class="luxury-card-platinum rounded-[2rem] p-8 md:p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <h2 class="text-xl font-bold mb-12 text-center uppercase tracking-[0.3em] text-gray-300">Informativni izračun</h2>
+                
+                <div class="space-y-12">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end">
+                            <label class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">Vrednost vozila</label>
+                            <span class="font-bold text-2xl platinum-text"><span id="val-cena">45.000</span> €</span>
                         </div>
-                        <input type="range" id="cena" min="10000" max="150000" step="1000" value="45000" class="w-full h-1.5 bg-gray-800 rounded-lg appearance-none" oninput="racunaj()">
+                        <input type="range" id="cena" min="10000" max="150000" step="1000" value="45000" class="w-full rounded-full appearance-none" oninput="racunaj()">
                     </div>
-                    <div>
-                        <div class="flex justify-between mb-3">
-                            <label class="text-xs uppercase tracking-tighter text-gray-300">Polog (%)</label>
-                            <span class="font-bold text-lg"><span id="val-polog">20</span> %</span>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end">
+                            <label class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">Polog (%)</label>
+                            <span class="font-bold text-xl platinum-text"><span id="val-polog">20</span> %</span>
                         </div>
-                        <input type="range" id="polog" min="10" max="50" step="5" value="20" class="w-full h-1.5 bg-gray-800 rounded-lg appearance-none" oninput="racunaj()">
+                        <input type="range" id="polog" min="10" max="50" step="5" value="20" class="w-full rounded-full appearance-none" oninput="racunaj()">
                     </div>
-                    <div>
-                        <div class="flex justify-between mb-3">
-                            <label class="text-xs uppercase tracking-tighter text-gray-300">Doba odplate</label>
-                            <span class="font-bold text-lg"><span id="val-meseci">48</span> m</span>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end">
+                            <label class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-semibold">Doba odplate</label>
+                            <span class="font-bold text-xl platinum-text"><span id="val-meseci">48</span> mes.</span>
                         </div>
-                        <input type="range" id="meseci" min="12" max="84" step="12" value="48" class="w-full h-1.5 bg-gray-800 rounded-lg appearance-none" oninput="racunaj()">
+                        <input type="range" id="meseci" min="12" max="84" step="12" value="48" class="w-full rounded-full appearance-none" oninput="racunaj()">
                     </div>
-                    <div class="bg-black/60 rounded-2xl p-8 text-center border border-white/5">
-                        <p class="text-gray-500 text-[10px] uppercase tracking-[0.2em] mb-2">Mesečni obrok</p>
-                        <div class="text-5xl font-bold gold-text tracking-tighter" id="rezultat">0,00 €</div>
-                        <a href="index.html#contact" class="mt-8 block w-full py-4 gold-bg text-black font-extrabold rounded-xl uppercase text-xs tracking-[0.2em] hover:scale-[1.02] transition-transform">Pridobi ponudbo</a>
+
+                    <div class="bg-[#050505] rounded-2xl p-8 text-center border border-white/5 relative group">
+                        <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+                        <p class="text-gray-500 text-[9px] uppercase tracking-[0.3em] mb-3 relative z-10">Ocenjeni mesečni obrok</p>
+                        <div class="text-5xl md:text-6xl font-bold platinum-text tracking-tighter relative z-10 pb-2" id="rezultat">0,00 €</div>
+                        
+                        <a href="index.html#contact" class="mt-8 block w-full py-4 platinum-bg font-extrabold rounded-xl uppercase text-xs tracking-[0.25em] hover:bg-white transition-colors relative z-10 shadow-[0_0_30px_rgba(229,228,226,0.2)]">Pridobi ponudbo</a>
                     </div>
                 </div>
             </div>
@@ -73,6 +115,7 @@
     </main>
 
     <script>
+        // Isti JS kod kao ranije, samo radi bez greške
         function racunaj() {
             const cena = parseInt(document.getElementById('cena').value);
             const polog = parseInt(document.getElementById('polog').value);
