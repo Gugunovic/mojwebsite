@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digitalac | Digitalne rešitve Maribor</title>
-    <meta name="description" content="Izdelava vrhunskih spletnih strani in digitalni marketing v Mariboru.">
-    <meta property="og:title" content="Digitalac - Vaš partner za digitalno rast">
-    <meta property="og:description" content="Profesionalne spletne strani za podjetja v Sloveniji.">
-    <meta property="og:url" content="https://digitalac.info">
+    <title>Digitalac – Spletne strani in digitalni marketing Maribor</title>
+    <meta name="description" content="Digitalac je digitalna agencija iz Maribora. Ustvarjamo profesionalne spletne strani, SEO optimizacijo in digitalni marketing. Pokličite nas.">
+    <meta name="keywords" content="spletne strani Maribor, digitalna agencija Maribor, SEO Slovenija, spletni marketing Maribor">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Digitalac">
+    <link rel="canonical" href="https://mojwebsite.pages.dev/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digitalac – Spletne strani Maribor">
+    <meta property="og:description" content="Profesionalne spletne strani in digitalni marketing za vaše podjetje v Mariboru.">
+    <meta property="og:url" content="https://mojwebsite.pages.dev/">
+    <meta property="og:locale" content="sl_SI">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Digitalac",
+          "description": "Digitalna agencija iz Maribora – spletne strani, SEO in digitalni marketing",
+          "url": "https://mojwebsite.pages.dev/",
+          "email": "kontakt@digitalac.info",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Maribor",
+            "addressCountry": "SI"
+          },
+          "areaServed": "Slovenia",
+          "serviceType": ["Spletno oblikovanje", "SEO optimizacija", "Digitalni marketing"]
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50:'#eef5ff',100:'#d9e8ff',200:'#bcd8ff',300:'#8ec0ff',
-                            400:'#599dff',500:'#3b82f6',600:'#1d5eeb',700:'#1a4fd8',
-                            800:'#1c3faf',900:'#0f2460',950:'#0a1628'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
-        body{font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans','Liberation Sans',sans-serif;background:#ffffff;color:#0f172a;overflow-x:hidden;font-size:17px;line-height:1.65}
-        h1,h2,h3{font-family:'Merriweather',Georgia,'Times New Roman',Times,serif;color:#0b1220}
+        body{font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans','Liberation Sans',sans-serif;background:#ffffff;color:#1a1a2e;overflow-x:hidden;font-size:17px;line-height:1.8}
+        p{line-height:1.8}
+        h1,h2,h3{font-family:'Merriweather',Georgia,'Times New Roman',Times,serif;color:#1a1a2e}
 
-        :root{--accent:#1d4ed8;--accent-dark:#1e40af;--ink:#0f172a;--muted:#475569;--border:#e2e8f0;--surface:#ffffff;--surface-2:#f8fafc}
+        :root{--accent:#1d4ed8;--accent-dark:#1e40af;--ink:#1a1a2e;--muted:#2b2b45;--border:#e2e8f0;--surface:#ffffff;--surface-2:#f8fafc}
 
         .page-section{position:relative;padding:96px 0}
         .section-dark{background:var(--surface)}
@@ -55,6 +66,9 @@
         .dot-nav,.orb,.scroll-indicator,.wa-float{display:none !important}
         .reveal,.reveal.active{opacity:1 !important;transform:none !important;transition:none !important}
 
+        a,button,input,textarea,select{outline:0}
+        a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:10px}
+
         @media(max-width:768px){.page-section{padding:72px 0}#landing{padding-top:120px}}
     </style>
 </head>
@@ -65,23 +79,20 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#landing" class="text-2xl font-black tracking-tight text-slate-900">Digitalac</a>
             <div class="hidden md:flex items-center gap-8">
-                <a href="#landing" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Domov</a>
-                <a href="#kdo-smo" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Kdo smo</a>
-                <a href="#nase-delo" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Naše delo</a>
-                <a href="#kaj-delamo" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Kaj delamo</a>
-                <a href="#kontakt" class="btn-glow text-base text-white font-bold py-3 px-7 rounded-lg">Kontakt</a>
+                <a href="#landing" class="inline-flex items-center min-h-12 px-2 text-base font-bold transition-colors" style="color:var(--ink)">Domov</a>
+                <a href="#kdo-smo" class="inline-flex items-center min-h-12 px-2 text-base font-bold transition-colors" style="color:var(--ink)">Kdo smo</a>
+                <a href="#nase-delo" class="inline-flex items-center min-h-12 px-2 text-base font-bold transition-colors" style="color:var(--ink)">Naše delo</a>
+                <a href="#kaj-delamo" class="inline-flex items-center min-h-12 px-2 text-base font-bold transition-colors" style="color:var(--ink)">Kaj delamo</a>
+                <a href="#kontakt" class="btn-glow inline-flex items-center justify-center min-h-12 text-base text-white font-black px-7 rounded-lg">Kontakt</a>
             </div>
-            <button class="md:hidden text-slate-900" onclick="toggleMobile()" aria-label="Odpri meni">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
         </div>
-        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 border-t" style="background:#fff;border-color:var(--border)">
+        <div id="mobileMenu" class="md:hidden absolute top-full left-0 right-0 border-t" style="background:#fff;border-color:var(--border)">
             <div class="px-6 py-6 space-y-4">
-                <a href="#landing" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Domov</a>
-                <a href="#kdo-smo" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Kdo smo</a>
-                <a href="#nase-delo" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Naše delo</a>
-                <a href="#kaj-delamo" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Kaj delamo</a>
-                <a href="#kontakt" class="block text-lg font-bold text-white py-3 px-4 rounded-lg" style="background:var(--accent)" onclick="toggleMobile()">Kontakt</a>
+                <a href="#landing" class="block min-h-12 text-lg font-black py-3" style="color:var(--ink)">Domov</a>
+                <a href="#kdo-smo" class="block min-h-12 text-lg font-black py-3" style="color:var(--ink)">Kdo smo</a>
+                <a href="#nase-delo" class="block min-h-12 text-lg font-black py-3" style="color:var(--ink)">Naše delo</a>
+                <a href="#kaj-delamo" class="block min-h-12 text-lg font-black py-3" style="color:var(--ink)">Kaj delamo</a>
+                <a href="#kontakt" class="btn-glow block min-h-12 text-lg font-black text-white py-3 px-4 rounded-lg">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -98,7 +109,7 @@
                     Povejte nam svojo vizijo — mi jo spremenimo v digitalno resničnost.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                    <a href="#kontakt" class="btn-glow text-white font-bold py-4 px-10 rounded-lg text-lg inline-flex items-center justify-center">Začnimo pogovor</a>
+                    <a href="#kontakt" class="btn-glow text-white font-black py-4 px-10 rounded-lg text-lg inline-flex items-center justify-center min-h-12">Začnimo pogovor</a>
                 </div>
             </div>
         </div>
@@ -280,7 +291,7 @@
                         <input type="hidden" name="redirect" value="https://digitalac.info/hvala.html">
                         <div class="grid sm:grid-cols-2 gap-5 mb-5">
                             <div>
-                                <label class="block text-sm mb-2" style="color:var(--muted)">Ime in priimek</label>
+                                <label class="block text-sm mb-2" style="color:var(--muted)">Ime</label>
                                 <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors" style="border-color:var(--border)" placeholder="Vaše ime">
                             </div>
                             <div>
@@ -292,20 +303,32 @@
                             <label class="block text-sm mb-2" style="color:var(--muted)">Sporočilo</label>
                             <textarea name="message" required rows="5" class="w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors resize-none" style="border-color:var(--border)" placeholder="Povejte nam več o vašem projektu..."></textarea>
                         </div>
-                        <button type="submit" class="w-full btn-glow text-white font-black py-4 px-8 rounded-lg text-lg">Pošljite sporočilo</button>
+                        <button type="submit" class="w-full btn-glow text-white font-black py-4 px-8 rounded-lg text-lg min-h-12">Pošljite sporočilo</button>
                     </form>
                 </div>
                 <div class="lg:col-span-2 space-y-6 reveal reveal-delay-3">
                     <div class="glass rounded-2xl p-6">
                         <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="text-sm mb-0.5" style="color:var(--muted)">Telefon</p>
+                                <a class="text-2xl font-black" href="tel:+38668134284" style="color:var(--ink)">+386 68 134 284</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-6">
+                        <div class="flex items-center gap-4">
                             <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-envelope"></i></div>
-                            <div><p class="text-xs mb-0.5" style="color:var(--muted)">E-pošta</p><p class="text-sm font-bold">kontakt@digitalac.info</p></div>
+                            <div>
+                                <p class="text-sm mb-0.5" style="color:var(--muted)">E-pošta</p>
+                                <a class="text-2xl font-black" href="mailto:kontakt@digitalac.info" style="color:var(--ink)">kontakt@digitalac.info</a>
+                            </div>
                         </div>
                     </div>
                     <div class="glass rounded-2xl p-6">
                         <div class="flex items-center gap-4">
                             <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-location-dot"></i></div>
-                            <div><p class="text-xs mb-0.5" style="color:var(--muted)">Lokacija</p><p class="text-sm font-bold">Maribor, Slovenija</p></div>
+                            <div><p class="text-sm mb-0.5" style="color:var(--muted)">Lokacija</p><p class="text-lg font-black" style="color:var(--ink)">Maribor, Slovenija</p></div>
                         </div>
                     </div>
                     <div class="glass rounded-2xl p-6">
@@ -321,17 +344,24 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t py-10" style="border-color:var(--border);background:var(--surface-2)">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-sm" style="color:var(--muted)">&copy; 2026 Digitalac. Vse pravice pridržane.</p>
-            <a href="privacy.html" class="text-sm font-bold transition-colors" style="color:var(--muted)">Pravila zasebnosti</a>
+    <footer class="border-t py-12" style="border-color:var(--border);background:var(--surface-2)">
+        <div class="max-w-7xl mx-auto px-6 grid gap-6 sm:grid-cols-3 items-start">
+            <div>
+                <p class="text-lg font-black" style="color:var(--ink)">kontakt@digitalac.info</p>
+                <p class="text-lg font-black" style="color:var(--ink)">Maribor, Slovenija</p>
+            </div>
+            <div class="sm:text-center">
+                <p class="text-lg font-black" style="color:var(--ink)">&copy; 2026 Digitalac. Vse pravice pridržane.</p>
+            </div>
+            <div class="sm:text-right">
+                <a href="privacy.html" class="text-lg font-black transition-colors" style="color:var(--ink)">Pravila zasebnosti</a>
+            </div>
         </div>
     </footer>
 
+    <a href="tel:+38668134284" class="md:hidden fixed left-4 right-4 bottom-4 btn-glow text-white font-black text-lg rounded-lg min-h-12 flex items-center justify-center" style="z-index:1200">Pokličite nas</a>
+
     <script>
-        function toggleMobile() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        }
         window.addEventListener('scroll', () => {
             document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
         });
