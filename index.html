@@ -9,7 +9,8 @@
     <meta property="og:description" content="Profesionalne spletne strani za podjetja v Sloveniji.">
     <meta property="og:url" content="https://digitalac.info">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -27,169 +28,115 @@
     </script>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-y:scroll}
-        body{font-family:'Inter',sans-serif;background:#0a1628;color:#fff;overflow-x:hidden}
-        h1,h2,h3{font-family:'Space Grotesk',sans-serif}
-        .page-section{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column}
-        .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;pointer-events:none;animation:orbFloat 12s ease-in-out infinite}
-        .orb-1{width:500px;height:500px;background:#3b82f6;top:-100px;left:-150px}
-        .orb-2{width:400px;height:400px;background:#6366f1;bottom:-80px;right:-100px;animation-delay:-4s}
-        .orb-3{width:300px;height:300px;background:#06b6d4;top:50%;left:60%;animation-delay:-8s}
-        @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}}
-        .glass{background:rgba(255,255,255,.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.07)}
-        .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-        .reveal.active{opacity:1;transform:translateY(0)}
-        .reveal-delay-1{transition-delay:.15s}.reveal-delay-2{transition-delay:.3s}.reveal-delay-3{transition-delay:.45s}.reveal-delay-4{transition-delay:.6s}
-        .scroll-indicator{animation:scrollBounce 2s ease-in-out infinite}
-        @keyframes scrollBounce{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(12px);opacity:1}}
-        .nav-glass{background:rgba(10,22,40,.6);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(59,130,246,.1);transition:all .4s ease}
-        .nav-glass.scrolled{background:rgba(10,22,40,.92);border-bottom-color:rgba(59,130,246,.25)}
-        .text-gradient{background:linear-gradient(135deg,#3b82f6,#06b6d4 50%,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .btn-glow{position:relative;background:linear-gradient(135deg,#3b82f6,#2563eb);transition:all .3s ease}
-        .btn-glow:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(59,130,246,.4),0 0 60px rgba(59,130,246,.15)}
-        .service-card{transition:all .4s cubic-bezier(.16,1,.3,1)}
-        .service-card:hover{transform:translateY(-8px);border-color:rgba(59,130,246,.4);box-shadow:0 20px 60px rgba(59,130,246,.15)}
-        .portfolio-card{overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}
-        .portfolio-card:hover{transform:scale(1.02);border-color:rgba(59,130,246,.5)}
-        .portfolio-card:hover img{transform:scale(1.08)}
-        .portfolio-card img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
-        .dot-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:12px}
-        .dot-nav a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.15);transition:all .3s ease;display:block}
-        .dot-nav a.active{background:#3b82f6;border-color:#3b82f6;box-shadow:0 0 12px rgba(59,130,246,.5);transform:scale(1.3)}
-        .wa-float{position:fixed;right:24px;bottom:24px;z-index:1500;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:all .3s ease;animation:waPulse 3s ease-in-out infinite}
-        .wa-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 30px rgba(37,211,102,.5)}
-        @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35)}50%{box-shadow:0 4px 30px rgba(37,211,102,.55),0 0 0 8px rgba(37,211,102,.1)}}
-        .grid-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-        .line-accent{width:60px;height:3px;background:linear-gradient(90deg,#3b82f6,#06b6d4);border-radius:2px}
-        .mobile-panel{background:rgba(10,22,40,.97);backdrop-filter:blur(24px)}
-        .section-dark{background:#0a1628}.section-deeper{background:#070f1e}.section-accent{background:linear-gradient(180deg,#0c1a30,#0a1628)}
-        /* Animated gradient border card */
-        .glow-card{position:relative;z-index:1}
-        .glow-card::before{content:'';position:absolute;inset:-2px;border-radius:1.5rem;padding:2px;background:conic-gradient(from var(--border-angle,0deg),#3b82f6,#06b6d4,#8b5cf6,#3b82f6);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:rotateBorder 4s linear infinite;opacity:.6;transition:opacity .4s ease;pointer-events:none}
-        .glow-card:hover::before{opacity:1}
-        @property --border-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
-        @keyframes rotateBorder{to{--border-angle:360deg}}
+        html{scroll-behavior:smooth}
+        body{font-family:'Lato',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans','Liberation Sans',sans-serif;background:#ffffff;color:#0f172a;overflow-x:hidden;font-size:17px;line-height:1.65}
+        h1,h2,h3{font-family:'Merriweather',Georgia,'Times New Roman',Times,serif;color:#0b1220}
 
-        /* Feature row hover */
-        .feature-row{padding:12px 16px;border-radius:12px;transition:all .35s cubic-bezier(.16,1,.3,1);cursor:default}
-        .feature-row:hover{background:rgba(255,255,255,.04);transform:translateX(6px)}
-        .feature-row:hover .feature-icon{transform:scale(1.15) rotate(-5deg);box-shadow:0 0 20px var(--icon-glow,rgba(59,130,246,.3))}
+        :root{--accent:#1d4ed8;--accent-dark:#1e40af;--ink:#0f172a;--muted:#475569;--border:#e2e8f0;--surface:#ffffff;--surface-2:#f8fafc}
 
-        /* Icon container animation */
-        .feature-icon{transition:all .4s cubic-bezier(.16,1,.3,1)}
+        .page-section{position:relative;padding:96px 0}
+        .section-dark{background:var(--surface)}
+        .section-deeper{background:var(--surface-2)}
+        .section-accent{background:var(--surface)}
+        #landing{padding-top:140px;padding-bottom:96px}
 
-        /* Staggered feature entrance */
-        .feature-row.revealed{opacity:1;transform:translateX(0)}
-        .feature-row{opacity:0;transform:translateX(-20px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),background .35s ease}
-        .feature-row:nth-child(1){transition-delay:.1s}
-        .feature-row:nth-child(2){transition-delay:.25s}
-        .feature-row:nth-child(3){transition-delay:.4s}
-        .feature-row:nth-child(4){transition-delay:.55s}
+        .nav-glass{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+        .nav-glass.scrolled{background:rgba(255,255,255,.98)}
 
-        /* Floating decorative accent behind card */
-        .card-float{animation:cardFloat 6s ease-in-out infinite}
-        @keyframes cardFloat{0%,100%{transform:translate(-4px,-4px)}50%{transform:translate(4px,4px)}}
+        .text-gradient{color:var(--accent)}
+        .line-accent{width:64px;height:3px;background:var(--accent);border-radius:2px}
 
-        @media(max-width:768px){html{scroll-snap-type:none}.dot-nav{display:none}.page-section{min-height:auto;padding:80px 0}#landing{min-height:100vh;padding:0}}
+        .btn-glow{background:var(--accent);transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
+        .btn-glow:hover{background:var(--accent-dark);transform:translateY(-1px)}
+
+        .glass{background:var(--surface);border:1px solid var(--border);box-shadow:0 10px 30px rgba(15,23,42,.06)}
+        .service-card:hover,.portfolio-card:hover{transform:none;border-color:var(--border);box-shadow:0 10px 30px rgba(15,23,42,.08)}
+
+        .dot-nav,.orb,.scroll-indicator,.wa-float{display:none !important}
+        .reveal,.reveal.active{opacity:1 !important;transform:none !important;transition:none !important}
+
+        @media(max-width:768px){.page-section{padding:72px 0}#landing{padding-top:120px}}
     </style>
 </head>
 <body>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/38668134284?text=Pozdravljeni%20Digitalac,%20zanima%20me%20izdelava%20spletne%20strani." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
-        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 32 32"><path d="M16.04 2.003c-7.71 0-13.98 6.27-13.98 13.98 0 2.46.64 4.86 1.86 6.98L2 30l7.19-1.89a13.9 13.9 0 006.85 1.75h.01c7.71 0 13.98-6.27 13.98-13.98S23.75 2.003 16.04 2.003zm8.14 19.74c-.34.96-1.68 1.76-2.69 1.98-.69.15-1.58.27-4.58-.98-3.83-1.6-6.3-5.55-6.49-5.8-.18-.25-1.56-2.08-1.56-3.97 0-1.89.99-2.82 1.34-3.21.35-.39.76-.48 1.01-.48.25 0 .5 0 .72.01.23.01.54-.09.85.65.31.74 1.06 2.56 1.15 2.75.09.19.15.42.03.67-.12.25-.18.42-.36.64-.18.22-.38.49-.54.66-.18.18-.37.37-.16.72.21.35.94 1.55 2.01 2.51 1.38 1.23 2.54 1.61 2.89 1.79.35.18.56.15.77-.09.21-.25.88-1.02 1.12-1.37.24-.35.48-.29.8-.18.32.12 2.02.95 2.37 1.12.35.18.58.27.66.42.09.15.09.88-.25 1.84z"/></svg>
-    </a>
-
-    <!-- Dot Navigation -->
-    <nav class="dot-nav" id="dotNav">
-        <a href="#landing" class="active" title="Domov"></a>
-        <a href="#kdo-smo" title="Kdo smo"></a>
-        <a href="#nase-delo" title="Naše delo"></a>
-        <a href="#kaj-delamo" title="Kaj delamo"></a>
-        <a href="#kontakt" title="Kontakt"></a>
-    </nav>
-
     <!-- Top Navigation -->
     <nav class="fixed top-0 w-full z-50 nav-glass" id="mainNav">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#landing" class="text-2xl font-bold text-gradient tracking-tight">Digitalac</a>
+            <a href="#landing" class="text-2xl font-black tracking-tight text-slate-900">Digitalac</a>
             <div class="hidden md:flex items-center gap-8">
-                <a href="#kdo-smo" class="text-sm text-white/70 hover:text-white transition-colors">Kdo smo</a>
-                <a href="#nase-delo" class="text-sm text-white/70 hover:text-white transition-colors">Naše delo</a>
-                <a href="#kaj-delamo" class="text-sm text-white/70 hover:text-white transition-colors">Kaj delamo</a>
-                <a href="#kontakt" class="btn-glow text-sm text-white font-semibold py-2.5 px-6 rounded-full">Kontakt</a>
+                <a href="#landing" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Domov</a>
+                <a href="#kdo-smo" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Kdo smo</a>
+                <a href="#nase-delo" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Naše delo</a>
+                <a href="#kaj-delamo" class="text-base text-slate-700 hover:text-slate-900 transition-colors">Kaj delamo</a>
+                <a href="#kontakt" class="btn-glow text-base text-white font-bold py-3 px-7 rounded-lg">Kontakt</a>
             </div>
-            <button class="md:hidden text-white" onclick="toggleMobile()">
+            <button class="md:hidden text-slate-900" onclick="toggleMobile()" aria-label="Odpri meni">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
-        <div id="mobileMenu" class="hidden md:hidden mobile-panel absolute top-full left-0 right-0 border-t border-white/5">
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 border-t" style="background:#fff;border-color:var(--border)">
             <div class="px-6 py-6 space-y-4">
-                <a href="#kdo-smo" class="block text-lg text-white/80 hover:text-white py-2" onclick="toggleMobile()">Kdo smo</a>
-                <a href="#nase-delo" class="block text-lg text-white/80 hover:text-white py-2" onclick="toggleMobile()">Naše delo</a>
-                <a href="#kaj-delamo" class="block text-lg text-white/80 hover:text-white py-2" onclick="toggleMobile()">Kaj delamo</a>
-                <a href="#kontakt" class="block text-lg text-white/80 hover:text-white py-2" onclick="toggleMobile()">Kontakt</a>
+                <a href="#landing" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Domov</a>
+                <a href="#kdo-smo" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Kdo smo</a>
+                <a href="#nase-delo" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Naše delo</a>
+                <a href="#kaj-delamo" class="block text-lg text-slate-800 hover:text-slate-900 py-2" onclick="toggleMobile()">Kaj delamo</a>
+                <a href="#kontakt" class="block text-lg font-bold text-white py-3 px-4 rounded-lg" style="background:var(--accent)" onclick="toggleMobile()">Kontakt</a>
             </div>
         </div>
     </nav>
 
     <!-- SECTION 1: LANDING -->
-    <section id="landing" class="page-section section-dark grid-bg overflow-hidden">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <p class="text-sm uppercase tracking-[0.3em] text-blue-400 mb-6 reveal">Digitalac Agency</p>
-            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8 reveal reveal-delay-1">
-                Kaj <span class="text-gradient">želite</span>?
-            </h1>
-            <p class="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto mb-12 reveal reveal-delay-2">
-                Povejte nam svojo vizijo — mi jo spremenimo v digitalno resničnost.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-3">
-                <a href="#kontakt" class="btn-glow text-white font-semibold py-4 px-10 rounded-full text-lg inline-block">Začnimo pogovor</a>
-                <a href="#kdo-smo" class="text-white/60 hover:text-white border border-white/15 hover:border-white/30 py-4 px-10 rounded-full text-lg transition-all inline-block">Spoznajte nas</a>
+    <section id="landing" class="page-section section-dark">
+        <div class="relative z-10 px-6 max-w-5xl mx-auto">
+            <div class="max-w-3xl">
+                <p class="text-sm uppercase tracking-[0.3em] mb-4" style="color:var(--muted)">Digitalac Agency</p>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.1] mb-6">
+                    Kaj <span class="text-gradient">želite</span>?
+                </h1>
+                <p class="text-xl" style="color:var(--muted)">
+                    Povejte nam svojo vizijo — mi jo spremenimo v digitalno resničnost.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#kontakt" class="btn-glow text-white font-bold py-4 px-10 rounded-lg text-lg inline-flex items-center justify-center">Začnimo pogovor</a>
+                </div>
             </div>
-        </div>
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-indicator">
-            <svg class="w-6 h-6 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </div>
     </section>
 
     <!-- SECTION 2: KDO SMO -->
-    <section id="kdo-smo" class="page-section section-deeper overflow-hidden">
-        <div class="orb" style="width:350px;height:350px;background:#6366f1;top:20%;right:-100px;opacity:.15;filter:blur(100px)"></div>
+    <section id="kdo-smo" class="page-section section-deeper">
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <div class="line-accent mb-6 reveal"></div>
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 reveal reveal-delay-1">Kdo <span class="text-gradient">smo</span>?</h2>
-                    <p class="text-lg text-white/60 leading-relaxed mb-6 reveal reveal-delay-2">Smo mlada in ambiciozna digitalna agencija iz Maribora. Ustvarjamo spletne izkušnje, ki navdušijo vaše stranke in dvignejo vaše poslovanje na višjo raven.</p>
-                    <p class="text-lg text-white/60 leading-relaxed mb-10 reveal reveal-delay-3">Naša strast so čiste linije, premišljen dizajn in rešitve, ki resnično delujejo. Vsak projekt obravnavamo kot edinstveno zgodbo, ki jo želimo povedati na najboljši možen način.</p>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-6 reveal reveal-delay-1">Kdo <span class="text-gradient">smo</span>?</h2>
+                    <p class="text-lg leading-relaxed mb-5 reveal reveal-delay-2" style="color:var(--muted)">Smo mlada in ambiciozna digitalna agencija iz Maribora. Ustvarjamo spletne izkušnje, ki navdušijo vaše stranke in dvignejo vaše poslovanje na višjo raven.</p>
+                    <p class="text-lg leading-relaxed mb-8 reveal reveal-delay-3" style="color:var(--muted)">Naša strast so čiste linije, premišljen dizajn in rešitve, ki resnično delujejo. Vsak projekt obravnavamo kot edinstveno zgodbo, ki jo želimo povedati na najboljši možen način.</p>
                     <div class="grid grid-cols-3 gap-6 reveal reveal-delay-4">
-                        <div class="text-center"><div class="text-3xl sm:text-4xl font-bold text-gradient">50+</div><div class="text-sm text-white/40 mt-1">Projektov</div></div>
-                        <div class="text-center"><div class="text-3xl sm:text-4xl font-bold text-gradient">100%</div><div class="text-sm text-white/40 mt-1">Predanost</div></div>
-                        <div class="text-center"><div class="text-3xl sm:text-4xl font-bold text-gradient">24/7</div><div class="text-sm text-white/40 mt-1">Podpora</div></div>
+                        <div class="text-center"><div class="text-3xl sm:text-4xl font-black" style="color:var(--accent)">50+</div><div class="text-sm mt-1" style="color:var(--muted)">Projektov</div></div>
+                        <div class="text-center"><div class="text-3xl sm:text-4xl font-black" style="color:var(--accent)">100%</div><div class="text-sm mt-1" style="color:var(--muted)">Predanost</div></div>
+                        <div class="text-center"><div class="text-3xl sm:text-4xl font-black" style="color:var(--accent)">24/7</div><div class="text-sm mt-1" style="color:var(--muted)">Podpora</div></div>
                     </div>
                 </div>
                 <div class="reveal reveal-delay-2 relative">
                     <div class="glow-card glass rounded-3xl p-8 sm:p-10">
                         <div class="space-y-2" id="featureList">
                             <div class="feature-row flex items-start gap-4" style="--icon-glow:rgba(59,130,246,.4)">
-                                <div class="feature-icon w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-                                <div><h4 class="font-semibold text-white mb-1">Hitri in učinkoviti</h4><p class="text-sm text-white/50">Od ideje do končnega izdelka v rekordnem času.</p></div>
+                                <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-bolt"></i></div>
+                                <div><h4 class="font-bold mb-1">Hitri in učinkoviti</h4><p class="text-sm" style="color:var(--muted)">Od ideje do končnega izdelka v rekordnem času.</p></div>
                             </div>
                             <div class="feature-row flex items-start gap-4" style="--icon-glow:rgba(6,182,212,.4)">
-                                <div class="feature-icon w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
-                                <div><h4 class="font-semibold text-white mb-1">Kreativni pristop</h4><p class="text-sm text-white/50">Vsak projekt je umetniško delo, prilagojeno vam.</p></div>
+                                <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eaf2ff;color:var(--accent)"><i class="fa-solid fa-pen-nib"></i></div>
+                                <div><h4 class="font-bold mb-1">Kreativni pristop</h4><p class="text-sm" style="color:var(--muted)">Vsak projekt je umetniško delo, prilagojeno vam.</p></div>
                             </div>
                             <div class="feature-row flex items-start gap-4" style="--icon-glow:rgba(139,92,246,.4)">
-                                <div class="feature-icon w-12 h-12 rounded-xl bg-violet-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-                                <div><h4 class="font-semibold text-white mb-1">Zanesljivost</h4><p class="text-sm text-white/50">Dolgotrajno partnerstvo, ne le enkratna storitev.</p></div>
+                                <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eaf2ff;color:var(--accent)"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div><h4 class="font-bold mb-1">Zanesljivost</h4><p class="text-sm" style="color:var(--muted)">Dolgotrajno partnerstvo, ne le enkratna storitev.</p></div>
                             </div>
                             <div class="feature-row flex items-start gap-4" style="--icon-glow:rgba(16,185,129,.4)">
-                                <div class="feature-icon w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-                                <div><h4 class="font-semibold text-white mb-1">Globalna vizija</h4><p class="text-sm text-white/50">Lokalno znanje z mednarodnimi standardi.</p></div>
+                                <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#eaf2ff;color:var(--accent)"><i class="fa-solid fa-globe"></i></div>
+                                <div><h4 class="font-bold mb-1">Globalna vizija</h4><p class="text-sm" style="color:var(--muted)">Lokalno znanje z mednarodnimi standardi.</p></div>
                             </div>
                         </div>
                     </div>
@@ -200,21 +147,20 @@
     </section>
 
     <!-- SECTION 3: NASE DELO -->
-    <section id="nase-delo" class="page-section section-dark overflow-hidden">
-        <div class="orb" style="width:400px;height:400px;background:#3b82f6;bottom:10%;left:-120px;opacity:.12;filter:blur(100px)"></div>
+    <section id="nase-delo" class="page-section section-dark">
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="line-accent mx-auto mb-6 reveal"></div>
-                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 reveal reveal-delay-1">Naše <span class="text-gradient">delo</span></h2>
-                <p class="text-lg text-white/50 max-w-xl mx-auto reveal reveal-delay-2">Projekti, na katere smo ponosni.</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-5 reveal reveal-delay-1">Naše <span class="text-gradient">delo</span></h2>
+                <p class="text-lg max-w-xl mx-auto reveal reveal-delay-2" style="color:var(--muted)">Projekti, na katere smo ponosni.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <div class="portfolio-card glass rounded-2xl block reveal reveal-delay-1">
-                    <div class="aspect-video overflow-hidden relative bg-brand-950/50">
+                    <div class="aspect-video overflow-hidden relative" style="background:var(--surface-2)">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center">
                                 <div class="w-12 h-12 rounded-full bg-blue-500/15 flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-6 h-6 text-blue-400 animate-spin" style="animation-duration:3s" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                    <i class="fa-solid fa-hourglass-half" style="color:var(--accent)"></i>
                                 </div>
                                 <span class="text-xs uppercase tracking-widest text-blue-400 font-semibold">V pripravi</span>
                             </div>
@@ -222,19 +168,18 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                             <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">V razvoju</span>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-1">Projekt #1</h3>
-                        <p class="text-sm text-white/40">Spletna stran za stranko — kmalu na voljo.</p>
+                        <h3 class="text-lg font-black mb-1">Projekt #1</h3>
+                        <p class="text-sm" style="color:var(--muted)">Spletna stran za stranko — kmalu na voljo.</p>
                     </div>
                 </div>
                 <div class="portfolio-card glass rounded-2xl block reveal reveal-delay-2">
-                    <div class="aspect-video overflow-hidden relative bg-brand-950/50">
+                    <div class="aspect-video overflow-hidden relative" style="background:var(--surface-2)">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center">
                                 <div class="w-12 h-12 rounded-full bg-cyan-500/15 flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-6 h-6 text-cyan-400 animate-spin" style="animation-duration:3s" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                    <i class="fa-solid fa-hourglass-half" style="color:var(--accent)"></i>
                                 </div>
                                 <span class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">V pripravi</span>
                             </div>
@@ -242,19 +187,18 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                             <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">V razvoju</span>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-1">Projekt #2</h3>
-                        <p class="text-sm text-white/40">Spletna stran za stranko — kmalu na voljo.</p>
+                        <h3 class="text-lg font-black mb-1">Projekt #2</h3>
+                        <p class="text-sm" style="color:var(--muted)">Spletna stran za stranko — kmalu na voljo.</p>
                     </div>
                 </div>
                 <div class="portfolio-card glass rounded-2xl block reveal reveal-delay-3">
-                    <div class="aspect-video overflow-hidden relative bg-brand-950/50">
+                    <div class="aspect-video overflow-hidden relative" style="background:var(--surface-2)">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="text-center">
                                 <div class="w-12 h-12 rounded-full bg-violet-500/15 flex items-center justify-center mx-auto mb-3">
-                                    <svg class="w-6 h-6 text-violet-400 animate-spin" style="animation-duration:3s" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                    <i class="fa-solid fa-hourglass-half" style="color:var(--accent)"></i>
                                 </div>
                                 <span class="text-xs uppercase tracking-widest text-violet-400 font-semibold">V pripravi</span>
                             </div>
@@ -262,16 +206,15 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
                             <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">V razvoju</span>
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-1">Projekt #3</h3>
-                        <p class="text-sm text-white/40">Spletna stran za stranko — kmalu na voljo.</p>
+                        <h3 class="text-lg font-black mb-1">Projekt #3</h3>
+                        <p class="text-sm" style="color:var(--muted)">Spletna stran za stranko — kmalu na voljo.</p>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-12 reveal reveal-delay-4">
-                <a href="portfolio.html" class="inline-flex items-center gap-2 text-white/60 hover:text-white border border-white/15 hover:border-white/30 py-3 px-8 rounded-full transition-all text-sm">
+                <a href="portfolio.html" class="inline-flex items-center gap-2 font-bold border py-3 px-8 rounded-lg transition-all text-base" style="border-color:var(--border);color:var(--ink);background:#fff">
                     Ogled vseh projektov
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
@@ -280,43 +223,42 @@
     </section>
 
     <!-- SECTION 4: KAJ DELAMO -->
-    <section id="kaj-delamo" class="page-section section-accent overflow-hidden">
-        <div class="orb" style="width:350px;height:350px;background:#06b6d4;top:30%;right:-80px;opacity:.12;filter:blur(100px)"></div>
+    <section id="kaj-delamo" class="page-section section-deeper">
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="line-accent mx-auto mb-6 reveal"></div>
-                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 reveal reveal-delay-1">Kaj <span class="text-gradient">delamo</span>?</h2>
-                <p class="text-lg text-white/50 max-w-xl mx-auto reveal reveal-delay-2">Celovite digitalne rešitve za vaše poslovanje.</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-5 reveal reveal-delay-1">Kaj <span class="text-gradient">delamo</span>?</h2>
+                <p class="text-lg max-w-xl mx-auto reveal reveal-delay-2" style="color:var(--muted)">Celovite digitalne rešitve za vaše poslovanje.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="service-card glass rounded-2xl p-8 reveal reveal-delay-1">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-500/15 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-                    <h3 class="text-xl font-bold mb-3">Spletno oblikovanje</h3>
-                    <p class="text-sm text-white/50 leading-relaxed mb-5">Ustvarjamo sodobne, odzivne in estetske spletne strani, ki pritegnejo pozornost in navdušijo vaše stranke.</p>
-                    <ul class="space-y-2 text-sm text-white/40">
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Prilagojeno oblikovanje</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Mobilna optimizacija</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Hitro nalaganje</li>
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-laptop-code fa-lg"></i></div>
+                    <h3 class="text-xl font-black mb-3">Spletno oblikovanje</h3>
+                    <p class="text-sm leading-relaxed mb-5" style="color:var(--muted)">Ustvarjamo sodobne, odzivne in estetske spletne strani, ki pritegnejo pozornost in navdušijo vaše stranke.</p>
+                    <ul class="space-y-2 text-sm" style="color:var(--muted)">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Prilagojeno oblikovanje</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Mobilna optimizacija</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Hitro nalaganje</li>
                     </ul>
                 </div>
                 <div class="service-card glass rounded-2xl p-8 reveal reveal-delay-2">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
-                    <h3 class="text-xl font-bold mb-3">SEO optimizacija</h3>
-                    <p class="text-sm text-white/50 leading-relaxed mb-5">Napredne strategije za boljšo vidnost na iskalnikih, da vas stranke najdejo pred konkurenco.</p>
-                    <ul class="space-y-2 text-sm text-white/40">
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Tehnični SEO</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Analiza ključnih besed</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Lokalni SEO</li>
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-magnifying-glass fa-lg"></i></div>
+                    <h3 class="text-xl font-black mb-3">SEO optimizacija</h3>
+                    <p class="text-sm leading-relaxed mb-5" style="color:var(--muted)">Napredne strategije za boljšo vidnost na iskalnikih, da vas stranke najdejo pred konkurenco.</p>
+                    <ul class="space-y-2 text-sm" style="color:var(--muted)">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Tehnični SEO</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Analiza ključnih besed</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Lokalni SEO</li>
                     </ul>
                 </div>
                 <div class="service-card glass rounded-2xl p-8 reveal reveal-delay-3">
-                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/15 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-                    <h3 class="text-xl font-bold mb-3">Pametni sistemi</h3>
-                    <p class="text-sm text-white/50 leading-relaxed mb-5">Napišemo sisteme, ki olajšajo vaše vsakdanje delo — od naročanja online do avtomatizacije procesov.</p>
-                    <ul class="space-y-2 text-sm text-white/40">
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Online naročanje</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Samodejna obvestila</li>
-                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Avtomatizacija procesov</li>
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-gears fa-lg"></i></div>
+                    <h3 class="text-xl font-black mb-3">Pametni sistemi</h3>
+                    <p class="text-sm leading-relaxed mb-5" style="color:var(--muted)">Napišemo sisteme, ki olajšajo vaše vsakdanje delo — od naročanja online do avtomatizacije procesov.</p>
+                    <ul class="space-y-2 text-sm" style="color:var(--muted)">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Online naročanje</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Samodejna obvestila</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check" style="color:var(--accent)"></i>Avtomatizacija procesov</li>
                     </ul>
                 </div>
             </div>
@@ -324,13 +266,12 @@
     </section>
 
     <!-- SECTION 5: KONTAKT -->
-    <section id="kontakt" class="page-section section-deeper overflow-hidden">
-        <div class="orb" style="width:400px;height:400px;background:#3b82f6;top:-50px;left:50%;opacity:.1;filter:blur(120px)"></div>
+    <section id="kontakt" class="page-section section-dark">
         <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="line-accent mx-auto mb-6 reveal"></div>
-                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 reveal reveal-delay-1">Stopite v <span class="text-gradient">stik</span></h2>
-                <p class="text-lg text-white/50 max-w-xl mx-auto reveal reveal-delay-2">Pripravljeni smo slišati vašo zgodbo.</p>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-5 reveal reveal-delay-1">Stopite v <span class="text-gradient">stik</span></h2>
+                <p class="text-lg max-w-xl mx-auto reveal reveal-delay-2" style="color:var(--muted)">Pripravljeni smo slišati vašo zgodbo.</p>
             </div>
             <div class="grid lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
                 <div class="lg:col-span-3 glass rounded-2xl p-8 sm:p-10 reveal reveal-delay-2">
@@ -339,39 +280,39 @@
                         <input type="hidden" name="redirect" value="https://digitalac.info/hvala.html">
                         <div class="grid sm:grid-cols-2 gap-5 mb-5">
                             <div>
-                                <label class="block text-sm text-white/60 mb-2">Ime in priimek</label>
-                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:outline-none transition-colors text-white placeholder-white/30" placeholder="Vaše ime">
+                                <label class="block text-sm mb-2" style="color:var(--muted)">Ime in priimek</label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors" style="border-color:var(--border)" placeholder="Vaše ime">
                             </div>
                             <div>
-                                <label class="block text-sm text-white/60 mb-2">E-pošta</label>
-                                <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:outline-none transition-colors text-white placeholder-white/30" placeholder="vas@email.com">
+                                <label class="block text-sm mb-2" style="color:var(--muted)">E-pošta</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors" style="border-color:var(--border)" placeholder="vas@email.com">
                             </div>
                         </div>
                         <div class="mb-5">
-                            <label class="block text-sm text-white/60 mb-2">Sporočilo</label>
-                            <textarea name="message" required rows="5" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 focus:outline-none transition-colors text-white placeholder-white/30 resize-none" placeholder="Povejte nam več o vašem projektu..."></textarea>
+                            <label class="block text-sm mb-2" style="color:var(--muted)">Sporočilo</label>
+                            <textarea name="message" required rows="5" class="w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors resize-none" style="border-color:var(--border)" placeholder="Povejte nam več o vašem projektu..."></textarea>
                         </div>
-                        <button type="submit" class="w-full btn-glow text-white font-semibold py-4 px-8 rounded-xl text-lg">Pošljite sporočilo</button>
+                        <button type="submit" class="w-full btn-glow text-white font-black py-4 px-8 rounded-lg text-lg">Pošljite sporočilo</button>
                     </form>
                 </div>
                 <div class="lg:col-span-2 space-y-6 reveal reveal-delay-3">
                     <div class="glass rounded-2xl p-6">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-                            <div><p class="text-xs text-white/40 mb-0.5">E-pošta</p><p class="text-sm font-medium">kontakt@digitalac.info</p></div>
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-envelope"></i></div>
+                            <div><p class="text-xs mb-0.5" style="color:var(--muted)">E-pošta</p><p class="text-sm font-bold">kontakt@digitalac.info</p></div>
                         </div>
                     </div>
                     <div class="glass rounded-2xl p-6">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-                            <div><p class="text-xs text-white/40 mb-0.5">Lokacija</p><p class="text-sm font-medium">Maribor, Slovenija</p></div>
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#e0ecff;color:var(--accent)"><i class="fa-solid fa-location-dot"></i></div>
+                            <div><p class="text-xs mb-0.5" style="color:var(--muted)">Lokacija</p><p class="text-sm font-bold">Maribor, Slovenija</p></div>
                         </div>
                     </div>
                     <div class="glass rounded-2xl p-6">
-                        <p class="text-xs text-white/40 mb-4">Spremljajte nas</p>
+                        <p class="text-xs mb-4" style="color:var(--muted)">Spremljajte nas</p>
                         <div class="flex gap-3">
-                            <a href="https://www.instagram.com/digitalac_agency/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 flex items-center justify-center transition-all" aria-label="Instagram"><svg class="w-5 h-5 text-white/70" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.645.069-4.849.069-3.205 0-3.584-.012-4.849-.069-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.069-4.849.149-3.225 1.664-4.771 4.919-4.919 1.265-.058 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/></svg></a>
-                            <a href="https://wa.me/38668134284" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/10 flex items-center justify-center transition-all" aria-label="WhatsApp"><svg class="w-5 h-5 text-white/70" fill="currentColor" viewBox="0 0 32 32"><path d="M16.04 2.003c-7.71 0-13.98 6.27-13.98 13.98 0 2.46.64 4.86 1.86 6.98L2 30l7.19-1.89a13.9 13.9 0 006.85 1.75h.01c7.71 0 13.98-6.27 13.98-13.98S23.75 2.003 16.04 2.003zm8.14 19.74c-.34.96-1.68 1.76-2.69 1.98-.69.15-1.58.27-4.58-.98-3.83-1.6-6.3-5.55-6.49-5.8-.18-.25-1.56-2.08-1.56-3.97 0-1.89.99-2.82 1.34-3.21.35-.39.76-.48 1.01-.48.25 0 .5 0 .72.01.23.01.54-.09.85.65.31.74 1.06 2.56 1.15 2.75.09.19.15.42.03.67-.12.25-.18.42-.36.64-.18.22-.38.49-.54.66-.18.18-.37.37-.16.72.21.35.94 1.55 2.01 2.51 1.38 1.23 2.54 1.61 2.89 1.79.35.18.56.15.77-.09.21-.25.88-1.02 1.12-1.37.24-.35.48-.29.8-.18.32.12 2.02.95 2.37 1.12.35.18.58.27.66.42.09.15.09.88-.25 1.84z"/></svg></a>
+                            <a href="https://www.instagram.com/digitalac_agency/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl border flex items-center justify-center transition-colors" style="border-color:var(--border);color:var(--ink);background:#fff" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://wa.me/38668134284" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl border flex items-center justify-center transition-colors" style="border-color:var(--border);color:var(--ink);background:#fff" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -380,88 +321,20 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 py-8">
+    <footer class="border-t py-10" style="border-color:var(--border);background:var(--surface-2)">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-white/30">&copy; 2026 Digitalac. Vse pravice pridržane.</p>
-            <a href="privacy.html" class="text-sm text-white/30 hover:text-white/60 transition-colors">Pravila zasebnosti</a>
+            <p class="text-sm" style="color:var(--muted)">&copy; 2026 Digitalac. Vse pravice pridržane.</p>
+            <a href="privacy.html" class="text-sm font-bold transition-colors" style="color:var(--muted)">Pravila zasebnosti</a>
         </div>
     </footer>
 
-    <!-- Cookie Banner -->
-    <div id="cookieBanner" class="hidden" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:2000;width:90vw;max-width:600px">
-        <div class="glass rounded-2xl px-5 py-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-            <p class="text-sm text-white/60">Uporabljamo piškotke za boljšo izkušnjo.</p>
-            <button id="cookieAcceptBtn" type="button" class="btn-glow text-white font-semibold py-2.5 px-6 rounded-full text-sm">Sprejmi</button>
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-
     <script>
-        // Mobile menu toggle
         function toggleMobile() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
         }
-
-        // Scroll reveal animation
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // Dot navigation active state
-        const sections = document.querySelectorAll('.page-section');
-        const dotLinks = document.querySelectorAll('#dotNav a');
-
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    dotLinks.forEach(link => {
-                        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(section => sectionObserver.observe(section));
-
-        // Feature row staggered entrance
-        const featureObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const rows = entry.target.querySelectorAll('.feature-row');
-                    rows.forEach(row => row.classList.add('revealed'));
-                    featureObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-        const featureList = document.getElementById('featureList');
-        if (featureList) featureObserver.observe(featureList);
-
-        // Nav scroll effect
         window.addEventListener('scroll', () => {
-            document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
         });
-
-        // Cookie banner
-        if (!localStorage.getItem('cookieAccepted')) {
-            document.getElementById('cookieBanner').classList.remove('hidden');
-        }
-        document.getElementById('cookieAcceptBtn').addEventListener('click', () => {
-            localStorage.setItem('cookieAccepted', 'true');
-            document.getElementById('cookieBanner').classList.add('hidden');
-        });
-
-        // Lucide icons
-        if (window.lucide) {
-            window.lucide.createIcons();
-        }
     </script>
 </body>
 </html>
