@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mojwebsite.pages.dev/sitemap.xml
